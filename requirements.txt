@@ -1,0 +1,17 @@
+babel==2.9.1
+python-dateutil==2.8.2
+flask-moment==1.0.2
+flask-wtf==1.0.1
+flask_sqlalchemy==2.5.1
+Jinja2==3.1.1
+MarkupSafe==2.1.1
+Werkzeug==2.1.1 
+click==8.1.2 
+flask==2.1.1
+importlib-metadata==4.11.3 
+itsdangerous==2.1.2 
+zipp==3.8.0
+flask-migrate==3.1.0
+Mako==1.2.0
+alembic==1.7.7
+psycopg2-binary==2.9.3
