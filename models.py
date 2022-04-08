@@ -92,3 +92,6 @@ def get_choices():
   # sort choices by alpha and 'other' as last choice
   choicesArr.sort(key=lambda g : (g[1] == 'Other', g[1]))
   return choicesArr
+
+
+print("File modules __name__ is set to: {}" .format(__name__))

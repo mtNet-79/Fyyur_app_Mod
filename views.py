@@ -4,7 +4,7 @@ import logging
 from core import app
 from models import *
 from forms import *
-import datetime
+from datetime import datetime
 import dateutil.parser
 import babel
 import models
@@ -86,11 +86,11 @@ def search_venues():
 
 @app.route('/venues/<int:venue_id>')
 def show_venue(venue_id):
+  flash(f'id {venue_id}')
+ 
   # shows the venue page with the given venue_id
   # get record with pk id
   result = Venue.query.get(venue_id)
-  data = request.get_json()
-
   # get genres 
   genres = result.genres
   garr = []
@@ -140,10 +140,9 @@ def show_venue(venue_id):
     "past_shows": pastshows,
     "upcoming_shows": futureshows,
     "past_shows_count": pscount,
-    "upcoming_shows_count": fscount,
+    "upcoming_shows_count": fscount
   
   }
-
 
   # get number of shows in the db
   # get number of future shows only
@@ -164,7 +163,6 @@ def create_venue_form():
   form = VenueForm()
   form.genres.choices = models.get_choices() 
   return render_template('forms/new_venue.html', form=form)
-
 
 @app.route('/venues/create', methods=['POST'])
 def create_venue_submission():
@@ -267,8 +265,7 @@ def create_venue_submission():
   # flash('Venue ' + request.form['name'] + ' was successfully listed!')
   # TODO: on unsuccessful db insert, flash an error instead.
   # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
-  # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
-  
+  # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/  
 
 @app.route('/venues/<venue_id>', methods=['DELETE'])
 def delete_venue(venue_id):
@@ -290,8 +287,6 @@ def delete_venue(venue_id):
     return jsonify({'success': True})
   # BONUS CHALLENGE: Implement a button to delete a Venue on a Venue Page, have it so that
   # clicking that button delete it from the db then redirect the user to the homepage
- 
-
 #  Artists
 #  ----------------------------------------------------------------
 @app.route('/artists')
@@ -813,3 +808,6 @@ if not app.debug:
     file_handler.setLevel(logging.INFO)
     app.logger.addHandler(file_handler)
     app.logger.info('errors')
+
+  
+   
