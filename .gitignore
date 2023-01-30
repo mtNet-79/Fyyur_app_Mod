@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+lenv/
 #  passwords
 **/my_app/config.py
 # Distribution / packaging
@@ -107,7 +107,7 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+lenv/
 ENV/
 env.bak/
 venv.bak/

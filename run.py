@@ -15,5 +15,5 @@ def load_Data():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
     load_Data()

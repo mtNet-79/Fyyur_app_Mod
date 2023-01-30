@@ -10,5 +10,6 @@ db_name = 'fyyurapp'
 pw = 'password'
 # Connect to the database
 # TODO IMPLEMENT DATABASE URL
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:'+pw+'@localhost:5432/'+db_name
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+# SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:'+pw+'@localhost:5432/'+db_name
 SQLALCHEMY_TRACK_MODIFICATIONS = False
